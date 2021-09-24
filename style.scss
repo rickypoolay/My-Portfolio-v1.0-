@@ -149,7 +149,7 @@ a {
 
 //      Landing Page Section
 
-.hero {
+#hero {
     background: linear-gradient(to bottom right,$mainColorLight, $mainColorDark);
 
     .name {
@@ -176,7 +176,7 @@ a {
 
 //About Section
 
-.about {
+#about {
     background: linear-gradient(to top right,$mainColorLight, $mainColorDark);
 
     .content-about {
