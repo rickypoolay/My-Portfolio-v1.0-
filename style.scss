@@ -1,8 +1,8 @@
-//Fonts
+//      Fonts
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
 
-//Color Variables
+//      Color Variables
 
 $headings : #fff;
 $paragraph : hsla(0, 0%, 100%, 0.75);
@@ -10,7 +10,7 @@ $mainColorLight : #FFB74B;
 $mainColorDark : #F85A3E;
 $iconsActive: #1E152A;
 
-// Global Styles
+//      Global Styles
 
 *, body, ::before,::after {
     box-sizing: border-box;
@@ -63,6 +63,7 @@ h2 {
 p,a {
     font-size: 1.5rem;
     color:$paragraph;
+    font-weight: 200;
 }
 
 a {
@@ -99,7 +100,7 @@ a {
     border-left: 4px solid $mainColorDark;
     box-shadow: -35px 3px 49px -24px  rgba(0, 0, 0, 0.205);
     padding:10px 25px;
-    height: 275px;
+    min-height: 275px;
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -116,7 +117,7 @@ a {
     margin-right:0;
 }
 
-//NavBar
+//      NavBar
 
 .navbar {
     position:fixed;
@@ -128,22 +129,20 @@ a {
     justify-content: space-between;
     top: 0;
     padding: 40px;
-    
-    .logo {
-        position: absolute;
-    }
 
     .nav-links {
+        height: 100%;
         display: flex;
-        gap:75px;
-        flex-direction: row-reverse;
         writing-mode: vertical-lr;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
         transform: rotate(180deg);
-        margin: auto 0;
+        gap:7%;
         }
 }
 
-//Landing Page Section
+//      Landing Page Section
 
 .hero {
     background: linear-gradient(to bottom right,$mainColorLight, $mainColorDark);
@@ -177,7 +176,6 @@ a {
     }
 
     .content-skills {
-        max-width: 700px;
+        max-width: 735px;
     }
 }
-
