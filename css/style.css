@@ -27,6 +27,8 @@ img {
 
 h1, h2, h3, h4 {
   font-family: Poppins;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 p, a, .logo {
@@ -40,19 +42,92 @@ p, a, .logo {
 
 h1 {
   font-size: 6rem;
+  font-weight: 200;
 }
 
 h2 {
   font-size: 3rem;
+  font-weight: 200;
 }
 
 p, a {
   font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+a {
+  display: inline-block;
+}
+
+.btn {
+  outline: #fff solid 1px;
+  outline-offset: 2px;
+  text-transform: uppercase;
+  font-family: Poppins;
+  padding: 15px 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  margin-left: 10vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.text-wrapper {
+  width: 80%;
+  max-width: 1120px;
+}
+
+.header-bg {
+  border-left: 4px solid #F85A3E;
+  -webkit-box-shadow: -35px 3px 49px -24px rgba(0, 0, 0, 0.205);
+          box-shadow: -35px 3px 49px -24px rgba(0, 0, 0, 0.205);
+  padding: 10px 25px;
+  height: 275px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: auto;
+}
+
+.right {
+  border-right: 4px solid #FFB74B;
+  border-left: none;
+  -webkit-box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
+          box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
+  text-align: right;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .navbar {
   position: fixed;
-  height: 100vh;
+  height: 100%;
+  width: 10vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,16 +138,69 @@ p, a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.navbar .nav-links ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  top: 0;
+  padding: 40px;
+}
+
+.navbar .logo {
+  position: absolute;
+}
+
+.navbar .nav-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 75px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin: auto 0;
+}
+
+.hero {
+  background: -webkit-gradient(linear, left top, right bottom, from(#FFB74B), to(#F85A3E));
+  background: linear-gradient(to bottom right, #FFB74B, #F85A3E);
+}
+
+.hero .name {
+  max-width: 800px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .title {
+  padding-right: 25px;
+  max-width: 800px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero .title h2 {
+  font-family: 'Urbanist';
+  text-transform: lowercase;
+}
+
+.about {
+  background: -webkit-gradient(linear, left bottom, right top, from(#FFB74B), to(#F85A3E));
+  background: linear-gradient(to top right, #FFB74B, #F85A3E);
+}
+
+.about .content-about {
+  max-width: 700px;
+}
+
+.about .content-skills {
+  max-width: 700px;
 }
 /*# sourceMappingURL=style.css.map */
