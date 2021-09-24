@@ -16,7 +16,7 @@ $iconsActive: #1E152A;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
+    // font-size: 8px;
 }
 
 section,footer {
@@ -76,6 +76,11 @@ a {
     text-transform: uppercase;
     font-family: Poppins;
     padding:15px 0;
+
+    &:hover {
+        background-color: rgb(255, 255, 255);
+        color: $iconsActive;
+    }
 }
 
 .container {
@@ -150,7 +155,10 @@ a {
     .name {
         max-width: 800px;
         justify-content: center;
-        
+
+        span {
+            font-weight: 700;
+        }
     }
 
     .title {
