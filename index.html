@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricky's Portfolio</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     
 <aside class='navbar'>
-    <a href='#hero'class = 'logo'>R</a>
+    <a href='#' class = 'logo'>R</a>
     <ul class = 'nav-links'>
-        <li><a href="#about">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a class='btn' href="#">Resume</a></li>
+        <li><a class='nav-about'href="#">About</a></li>
+        <li><a class='nav-projects'href="#">Projects</a></li>
+        <li><a class='nav-contact'href="#">Contact</a></li>
+        <li><a target="_blank" class='btn resume' href="https://google.com">Resume</a></li>
     </ul>
 </aside>
 
@@ -47,43 +47,43 @@
                     <li>
                         <p>API</p>
                         <div class="icon-wrapper">
-                            <img src="./images/Gear-icon.svg" alt="">
+                            <img src="../images/Gear-icon.svg" alt="API icon">
                         </div>
                     </li>
                     <li>
                         <p>Wordpress</p>
                         <div class="icon-wrapper">
-                            <img src="./images/WordPress-icon.svg" alt="">
+                            <img src="../images/WordPress-icon.svg" alt="Wordpress icon">
                         </div>
                     </li>
                     <li>
                         <p>jQuery</p>
                         <div class="icon-wrapper">
-                            <img src="./images/jQuery-icon.svg" alt="">
+                            <img src="../images/jQuery-icon.svg" alt="jQuery icon">
                         </div>
                     </li>
                     <li>
                         <p>JavaScript</p>
                         <div class="icon-wrapper">
-                            <img src="./images/JS-icon.svg" alt="">
+                            <img src="../images/JS-icon.svg" alt="JavaScript icon">
                         </div>
                     </li>
                     <li>
                         <p>Scss</p>
                         <div class="icon-wrapper">
-                            <img src="./images/Sass-icon.svg" alt="">
+                            <img src="../images/Sass-icon.svg" alt="Scss icon">
                         </div>
                     </li>
                     <li>
                         <p>CSS</p>
                         <div class="icon-wrapper">
-                            <img src="./images/CSS-icon.svg" alt="">
+                            <img src="../images/CSS-icon.svg" alt="CSS icon">
                         </div>
                     </li>
                     <li>
                         <p>HTML</p>
                         <div class="icon-wrapper">
-                            <img src="./images/HTML-icon.svg" alt="">
+                            <img src="../images/HTML-icon.svg" alt="HTML icon">
                         </div>
                     </li>
                 </ul>
@@ -96,37 +96,85 @@
 <section id='projects'>
     <div class="container">
         <div class="text-wrapper">
+
+            <!--Header-->
+
             <div class="header-bg right">
                 <h2>Projects</h2>
             </div>
+
+            <!--Projects-->
+
             <div class="projects-container">
+
                 <div class="project">
                     <div class="img-wrapper">
-                        <img src="./images/background-project-filler.png" alt="">
+                        <img src="../images/background-project-filler.png" alt="">
                     </div>
                     <p class = 'project-title'>Lorem Ipsum</p>
                 </div>
+
                 <div class="project">
                     <div class="img-wrapper">
-                        <img src="./images/background-project-filler.png" alt="">
+                        <img src="../images/background-project-filler.png" alt="">
                     </div>
                     <p class = 'project-title'>Lorem Ipsum</p>
                 </div>
+
                 <div class="project">
                     <div class="img-wrapper">
-                        <img src="./images/background-project-filler.png" alt="">
+                        <img src="../images/background-project-filler.png" alt="">
                     </div>
                     <p class = 'project-title'>Lorem Ipsum</p>
                 </div>
+
                 <div class="project">
                     <div class="img-wrapper">
-                        <img src="./images/background-project-filler.png" alt="">
+                        <img src="../images/background-project-filler.png" alt="">
                     </div>
                     <p class = 'project-title'>Lorem Ipsum</p>
                 </div>
+
+                
             </div>
+            
+            <!--Button-->
+            <a class='btn 'href="#">View More</a>
+            
         </div>
     </div>
 </section>
+
+<section id='contact'>
+    <div class="container">
+        <div class="text-wrapper">
+            
+            <div class="img-wrapper">
+                <img src="../images/mail-icon.svg" alt="Main Icon">
+            </div>
+
+            <h2>Get in touch</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lacus, cras id elit eleifend erat.</p>
+
+            <a class ='btn' href="mailto:rickypoullet@gmail.com">Contact</a>
+
+            <div class="socials">
+                <div class="icon-wrapper">
+                    <a target="_blank" href="https://linkedin.com/in/ricardo-poullet-329912190"><img src="./images/linkedin-icon.svg" alt="Linkedin"></a>
+                </div>
+                <div class="icon-wrapper">
+                    <a target="_blank" href="https://github.com/rickypoolay"><img src="./images/github-icon.svg" alt="Github"></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js"></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+<script src="../index.js"></script>
 </body>
 </html>
