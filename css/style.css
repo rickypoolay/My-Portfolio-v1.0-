@@ -329,6 +329,8 @@ header .nav-links .btn {
 #projects .projects-container .project .img-wrapper {
   opacity: 50%;
   height: 100%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 #projects .btn {

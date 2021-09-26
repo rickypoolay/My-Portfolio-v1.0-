@@ -224,8 +224,6 @@ header {
             text-align: center;
         }
 
-
-        
         .icon-wrapper {
             margin:auto;
             max-width: 48px;
@@ -277,6 +275,7 @@ header {
             .img-wrapper {
                 opacity: 50%;
                 height: 100%;
+                filter:grayscale(100%)
             }
         }
     }
