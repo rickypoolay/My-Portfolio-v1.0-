@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
-html {
-  scroll-behavior: smooth;
-}
-
 *, body, ::before, ::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -44,6 +40,7 @@ p, a, .logo {
 .logo {
   font-size: 4rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 h1 {
@@ -63,6 +60,7 @@ p, a {
 }
 
 a {
+  cursor: pointer;
   display: inline-block;
 }
 
@@ -76,6 +74,7 @@ a {
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
   z-index: 0;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -171,7 +170,7 @@ a {
   margin-right: 0;
 }
 
-.navbar {
+header {
   position: fixed;
   height: 100%;
   width: 150px;
@@ -192,7 +191,7 @@ a {
   padding: 40px;
 }
 
-.navbar .nav-links {
+header .nav-links {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -215,7 +214,7 @@ a {
   gap: 7%;
 }
 
-.navbar .nav-links .btn {
+header .nav-links .btn {
   padding: 20px 0;
 }
 
@@ -224,26 +223,18 @@ a {
   background: linear-gradient(to bottom right, #FFB74B, #F85A3E);
 }
 
-#hero .name {
+#hero .header-bg {
   max-width: 800px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-#hero .name span {
+#hero .header-bg span {
   font-weight: 700;
 }
 
-#hero .title {
-  padding-right: 25px;
-  max-width: 800px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#hero .title h2 {
+#hero h2 {
   font-family: 'Urbanist';
   text-transform: lowercase;
 }
