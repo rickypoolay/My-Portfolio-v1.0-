@@ -67,7 +67,7 @@ $(function () {
 
     // Scroll Trigger nav link updates
 
-    // gsap.to('nav-link')
+    gsap.to('.nav-herp')
 
 
 

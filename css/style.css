@@ -6,6 +6,12 @@
   padding: 0;
 }
 
+@media (max-width: 37.5em) {
+  *, body, ::before, ::after {
+    font-size: 12px;
+  }
+}
+
 section, footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -123,6 +129,12 @@ a {
           align-items: center;
 }
 
+@media (max-width: 37.5em) {
+  .container {
+    margin-left: 0;
+  }
+}
+
 .text-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -188,7 +200,8 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   top: 0;
-  padding: 40px;
+  padding: 20px;
+  z-index: 10;
 }
 
 header .nav-links {
@@ -218,6 +231,30 @@ header .nav-links .btn {
   padding: 20px 0;
 }
 
+header .hamburger {
+  display: none;
+}
+
+@media (max-width: 37.5em) {
+  header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    height: auto;
+    width: 100%;
+  }
+  header .nav-links {
+    display: none;
+  }
+  header .hamburger {
+    display: unset;
+  }
+}
+
 #hero {
   background: -webkit-gradient(linear, left top, right bottom, from(#FFB74B), to(#F85A3E));
   background: linear-gradient(to bottom right, #FFB74B, #F85A3E);
@@ -231,6 +268,7 @@ header .nav-links .btn {
 }
 
 #hero .header-bg span {
+  font-size: 6rem;
   font-weight: 700;
 }
 
@@ -308,12 +346,23 @@ header .nav-links .btn {
 #projects .projects-container .project {
   position: relative;
   width: 45%;
-  min-width: 400px;
   border: 1px solid white;
   max-width: 500px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  cursor: pointer;
+}
+
+#projects .projects-container .project:hover .img-wrapper {
+  opacity: 50%;
+}
+
+#projects .projects-container .project .img-wrapper {
+  height: 100%;
+  opacity: 25%;
+  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity .25s ease-in-out;
 }
 
 #projects .projects-container .project .project-title {
@@ -324,13 +373,9 @@ header .nav-links .btn {
           transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
-}
-
-#projects .projects-container .project .img-wrapper {
-  opacity: 50%;
-  height: 100%;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
+  z-index: 1;
+  font-weight: 400;
+  color: #fff;
 }
 
 #projects .btn {
