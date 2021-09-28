@@ -55,6 +55,12 @@ $(function () {
         }
     })
 
+    // Scroll Trigger nav link updates
+
+    gsap.to('.nav-herp')
+
+
+
 
 
 
