@@ -110,6 +110,12 @@ a {
   left: 0;
 }
 
+@media (max-width: 40em) {
+  .btn::after {
+    display: none;
+  }
+}
+
 .container {
   margin: 0 auto;
   width: 100%;
