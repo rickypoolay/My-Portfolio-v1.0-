@@ -1,2 +1,2 @@
 # My Portfolio v1.0 
- Designed and Crafted b
+ Designed and Crafted by Ricky.
