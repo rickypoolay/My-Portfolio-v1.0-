@@ -6,7 +6,7 @@
   padding: 0;
 }
 
-@media (max-width: 37.5em) {
+@media (max-width: 50em) {
   *, body, ::before, ::after {
     font-size: 12px;
   }
@@ -129,7 +129,7 @@ a {
           align-items: center;
 }
 
-@media (max-width: 37.5em) {
+@media (max-width: 50em) {
   .container {
     margin-left: 0;
   }
@@ -235,7 +235,11 @@ header .hamburger {
   display: none;
 }
 
-@media (max-width: 37.5em) {
+header .nav-dropdown {
+  display: none;
+}
+
+@media (max-width: 50em) {
   header {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -253,6 +257,10 @@ header .hamburger {
   header .hamburger {
     display: unset;
   }
+}
+
+header .nav-dropdown {
+  position: absolute;
 }
 
 #hero {
@@ -355,7 +363,7 @@ header .hamburger {
 }
 
 #projects .projects-container .project:hover .img-wrapper {
-  opacity: 50%;
+  opacity: 60%;
 }
 
 #projects .projects-container .project .img-wrapper {

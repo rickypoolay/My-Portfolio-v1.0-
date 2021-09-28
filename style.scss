@@ -26,7 +26,7 @@
     }
 
     @else if $point==mobileonly {
-        @media (max-width: 37.5em) {
+        @media (max-width: 50em) {
             @content;
         }
     }
@@ -227,6 +227,11 @@ header {
         display:none;
     }
 
+    .nav-dropdown {
+        display: none;
+    }
+
+
     @include breakpoint(mobileonly) {
         flex-direction: row;
         align-items: start;
@@ -241,6 +246,11 @@ header {
             display:unset;
         }
     }
+
+    .nav-dropdown {
+        position: absolute;
+    }
+    
 }
 
 //      Landing Page Section
@@ -330,7 +340,7 @@ header {
 
             &:hover {
                 .img-wrapper {
-                    opacity:50%;
+                    opacity:60%;
                 }
             }
             

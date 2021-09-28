@@ -5,15 +5,23 @@ $(function () {
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
     
+    //Function to changing Navbar text color on scroll triggers 
+
+    function scrollChangeNavText (navLink) {
+        $('.nav-links li a').each(() => {
+            $('.nav-links li a').css('color', 'hsla(0, 0%, 100%, 0.75)');
+            $('.logo').css('color', 'hsla(0, 0%, 100%, 0.75)');
+        })
+        $(navLink).css('color', '#1E152A');
+    }
 
     //Creating TimeLines for each Section
-
     var homeTL = gsap.timeline();
     var aboutTL = gsap.timeline({scrollTrigger: {trigger:'#about', start: "top center", end: "center center"}});
     var projectsTL = gsap.timeline({scrollTrigger: {trigger:'#projects', start: "top center", end: "center center"}});
     var contactTL = gsap.timeline({scrollTrigger: {trigger:'#contact', start: "top center", end: "center center"}});
 
-    //Animate Pages
+    //Animate Pages adding to Timelines
 
         //Home
     homeTL.from('.logo', {duration:.5, opacity:0, delay:.25})
@@ -34,38 +42,62 @@ $(function () {
     contactTL.from('#contact .text-wrapper', {duration:.75, opacity:0, y:200, ease:'power1'})
         .fromTo('#contact .btn', {scaleX:0, scaleY:0}, {duration:.5, scaleX:1, scaleY:1, ease:'back'})
 
-    //Auto Scroll from navbar and text color setting
+    //Auto Scroll from navbar
+
+        //Click logo, scroll to hero section
         
     $('.logo').click(() => {
-        $('.logo').css('color', '#1E152A');
-        $('.nav-links li a').each(() => {
-            $('.nav-links li a').css('color', 'hsla(0, 0%, 100%, 0.75)');
-        })
         gsap.to(window, .5, {ease: 'power1', scrollTo:(`#hero`)})
     })
     
-        //Auto Scroll by fetching innerText of clicked nav-link and inputing to gsap Scroll to
+        //Scroll by clicking nav-link to section
 
     $('.nav-links li').click((e) => {
         const clicked = e.target.innerText.toLowerCase();
         if (clicked == 'resume') {
             return;
         } else {
-            //Scroll
             gsap.to(window, .5, {ease: 'power1', scrollTo:(`#${clicked}`)})
-
-            //Set Each Nav link to reset
-            $('.nav-links li a').each(() => {
-                $('.nav-links li a').css('color', 'hsla(0, 0%, 100%, 0.75)');
-                $('.logo').css('color', 'hsla(0, 0%, 100%, 0.75)');
-            })
-
-            //set new color
-            $(e.target).css('color', '#1E152A');
         }
     })
 
+    //Change nav links to active color when scrolling to section
 
+    //Logo Trigger
+    ScrollTrigger.create({
+        trigger: "#hero",
+        start:"top center",
+        end:"bottom center",
+        onEnter: () => { scrollChangeNavText('.logo') },
+        onEnterBack: () => { scrollChangeNavText('.logo') },
+    })
+    
+    //About Trigger
+    ScrollTrigger.create({
+        trigger: "#about",
+        start:"top center",
+        end:"bottom center",
+        onEnter: () => { scrollChangeNavText('.nav-about') },
+        onEnterBack: () => { scrollChangeNavText('.nav-about') },
+    })
+
+    //Projects Trigger
+    ScrollTrigger.create({
+        trigger: "#projects",
+        start:"top center",
+        end:"bottom center",
+        onEnter: () => { scrollChangeNavText('.nav-projects') },
+        onEnterBack: () => { scrollChangeNavText('.nav-projects') },
+    })
+
+    //Contact Trigger
+    ScrollTrigger.create({
+        trigger: "#contact",
+        start:"top center",
+        end:"bottom center",
+        onEnter: () => { scrollChangeNavText('.nav-contact') },
+        onEnterBack: () => { scrollChangeNavText('.nav-contact') },
+    })
 
 
 
