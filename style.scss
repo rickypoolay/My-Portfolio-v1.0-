@@ -14,7 +14,7 @@
     }
 
     @else if $point==tablet {
-        @media (min-width: 50em) {
+        @media (max-width: 50em) {
             @content;
         }
     }
@@ -100,6 +100,11 @@ h2 {
     font-weight: 200;
 }
 
+h3 {
+    font-size: 2rem;
+    font-weight: 200;
+}
+
 p,a {
     font-size: 1.5rem;
     color:$paragraph;
@@ -178,6 +183,23 @@ a {
     align-items: center;
     width:80%;
     max-width: 1120px;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+    gap:25px;
+    flex-wrap: wrap;
+
+    p {
+        text-align: center;
+    }
+
+    .icon-wrapper {
+        margin:auto;
+        max-width: 48px;
+        height: 48px;
+    }
 }
 
 //Header Background w Shadow
@@ -297,29 +319,21 @@ header {
     }
 
     .skills-list {
-        display: flex;
-        justify-content: center;
-        gap:40px;
-        flex-wrap: wrap;
-        margin-top: 20px;
-
-        p {
-            text-align: center;
-        }
+        margin-top:25px;
 
         .icon-wrapper {
-            margin:auto;
-            max-width: 48px;
-            height: 48px;
-            margin-top:10px;
+            margin-top: 10px;
         }
     }
+
 }
 
 //Projects Section
 
 #projects {
     background: linear-gradient(to bottom right, $mainColorLight, $mainColorDark);
+
+    // Header
 
     .header-bg {
         min-height: 155px;
@@ -330,64 +344,79 @@ header {
         }
     }
 
+    // Individual Projects
+
     .projects-container {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        flex-wrap: 50em;
-        column-gap:50px;
-        margin-top: 50px;
+        flex-direction: column;
+        gap:25px;
+        margin-block: 25px;
+    }
 
-        .project {
-            position: relative;
-            width: 45%;
-            border: 1px solid white;
-            max-width: 500px;
-            flex-grow: 1;
+    .project {
+        display: flex;
 
-            &:hover {
-                .img-wrapper {
-                    opacity:60%;
+        @include breakpoint(tablet) {
+            flex-direction: column;
+        }
+
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: $mainColorDark;
+            padding: 20px;
+            width: 80%;
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        .text {
+            max-width:500px;
+        }
+
+
+        .bottom {
+            display: flex;
+            text-align: right;
+            justify-content: space-between;
+
+            p{
+                margin-bottom: 0;
+            }
+
+            .icon-wrapper {
+                max-height: 35px;
+                max-width: 35px;
+                filter: grayscale(100%) invert(100%);
+            }
+
+            .buttons {
+                display: flex;
+                gap:25px;
+                margin-top: auto;
+                width: 50%;
+                
+                .btn {
+                    width: 40%;
+                    font-size: 1rem;
                 }
             }
-            
-            .img-wrapper {
-                height: 100%;
-                opacity:25%;
-                transition: opacity .25s ease-in-out;
-            }
 
-            .project-title {
-                position: absolute;
-                top:50%;
-                left:50%;
-                transform: translate(-50%,-50%);
-                text-align: center;
-                width: 100%;
-                z-index:1;
-                font-weight:300;
+            @include breakpoint(tablet) {
+                flex-direction: column;
             }
-            
+        }
+
+        .img-wrapper {
+            // max-width: 400px;
+            // max-height: 350px;
         }
     }
-
-    .btn {
-        margin-top:50px;
-        width: 170px;
-    }
 }
 
-.modal {
-    position:fixed;
-    background: rgba(0, 0, 0, 0.192);
-    backdrop-filter: blur(5px);
-    width: 100vw;
-    height: 100vh;
-    top:0;
-    left:0;
-    z-index: 3;
-}
 
 //Contact Section
 

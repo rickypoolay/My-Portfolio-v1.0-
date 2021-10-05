@@ -60,6 +60,11 @@ h2 {
   font-weight: 200;
 }
 
+h3 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+
 p, a {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.75);
@@ -158,6 +163,28 @@ a {
           align-items: center;
   width: 80%;
   max-width: 1120px;
+}
+
+.skills-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 25px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.skills-list p {
+  text-align: center;
+}
+
+.skills-list .icon-wrapper {
+  margin: auto;
+  max-width: 48px;
+  height: 48px;
 }
 
 .header-bg {
@@ -309,26 +336,10 @@ header .nav-dropdown {
 }
 
 #about .skills-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 40px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-#about .skills-list p {
-  text-align: center;
+  margin-top: 25px;
 }
 
 #about .skills-list .icon-wrapper {
-  margin: auto;
-  max-width: 48px;
-  height: 48px;
   margin-top: 10px;
 }
 
@@ -350,67 +361,95 @@ header .nav-dropdown {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 25px;
-  -ms-flex-wrap: 50em;
-      flex-wrap: 50em;
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
-  margin-top: 50px;
+  margin-block: 25px;
 }
 
-#projects .projects-container .project {
-  position: relative;
-  width: 45%;
-  border: 1px solid white;
+#projects .project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 50em) {
+  #projects .project {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#projects .project .project-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #F85A3E;
+  padding: 20px;
+  width: 80%;
+}
+
+#projects .project .project-info p {
+  font-size: 15px;
+}
+
+#projects .project .text {
   max-width: 500px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
-#projects .projects-container .project:hover .img-wrapper {
-  opacity: 60%;
+#projects .project .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-#projects .projects-container .project .img-wrapper {
-  height: 100%;
-  opacity: 25%;
-  -webkit-transition: opacity .25s ease-in-out;
-  transition: opacity .25s ease-in-out;
+#projects .project .bottom p {
+  margin-bottom: 0;
 }
 
-#projects .projects-container .project .project-title {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  text-align: center;
-  width: 100%;
-  z-index: 1;
-  font-weight: 300;
+#projects .project .bottom .icon-wrapper {
+  max-height: 35px;
+  max-width: 35px;
+  -webkit-filter: grayscale(100%) invert(100%);
+          filter: grayscale(100%) invert(100%);
 }
 
-#projects .btn {
-  margin-top: 50px;
-  width: 170px;
+#projects .project .bottom .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 25px;
+  margin-top: auto;
+  width: 50%;
 }
 
-.modal {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.192);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: 3;
+#projects .project .bottom .buttons .btn {
+  width: 40%;
+  font-size: 1rem;
+}
+
+@media (max-width: 50em) {
+  #projects .project .bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 #contact {
