@@ -398,7 +398,7 @@ header {
         .bottom {
             display: flex;
             justify-content: space-between;
-            text-align: right;
+            text-align: center;
             margin-top: 20px;
 
             @include breakpoint(tablet) {
@@ -412,7 +412,7 @@ header {
             }
 
             .skills-list {
-                justify-content: space-between;
+                justify-content: space-around;
 
             }
 

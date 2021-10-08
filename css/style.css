@@ -414,7 +414,7 @@ header .mobile-links li a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-align: right;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -435,9 +435,8 @@ header .mobile-links li a {
 }
 
 #projects .project .bottom .skills-list {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 #projects .project .bottom .buttons {
