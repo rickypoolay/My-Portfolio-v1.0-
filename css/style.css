@@ -174,12 +174,16 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 25px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+}
+
+.skills-list li {
+  margin-top: 15px;
+  margin-right: 20px;
 }
 
 .skills-list p {
@@ -423,13 +427,6 @@ header .mobile-links li a {
   }
 }
 
-#projects .project .bottom .skills-list {
-  gap: 10px;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
 #projects .project .bottom .icon-wrapper {
   max-height: 2.5rem;
   max-width: 2.5rem;
@@ -437,19 +434,27 @@ header .mobile-links li a {
           filter: grayscale(100%) invert(100%);
 }
 
+#projects .project .bottom .skills-list {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 #projects .project .bottom .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 25px;
   margin-top: auto;
   margin-right: 10px;
-  width: 50%;
-  min-width: 150px;
+  min-width: 50%;
 }
 
 #projects .project .bottom .buttons .btn {
   width: 40%;
+}
+
+#projects .project .bottom .buttons .btn:first-of-type {
+  margin-right: 25px;
 }
 
 @media (max-width: 50em) {
@@ -463,7 +468,7 @@ header .mobile-links li a {
 }
 
 #projects .btn {
-  width: 200px;
+  width: 140px;
 }
 
 #contact {
@@ -496,6 +501,9 @@ header .mobile-links li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90px;
 }
 /*# sourceMappingURL=style.css.map */

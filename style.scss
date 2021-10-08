@@ -193,9 +193,14 @@ a {
 
 .skills-list {
     display: flex;
-    justify-content: center;
-    gap:25px;
     flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+        margin-top: 15px;
+        margin-right: 20px;
+    }
+
 
     p {
         text-align: center;
@@ -400,28 +405,29 @@ header {
                 flex-direction: column-reverse;
             }
 
-            .skills-list {
-                gap: 10px;
-                justify-content: flex-end;
-
-            }
-
             .icon-wrapper {
                 max-height:2.5rem;
                 max-width: 2.5rem;
                 filter: grayscale(100%) invert(100%);
             }
 
+            .skills-list {
+                justify-content: space-between;
+
+            }
+
             .buttons {
                 display: flex;
-                gap:25px;
                 margin-top: auto;
                 margin-right: 10px;
-                width: 50%;
-                min-width: 150px;
+                min-width: 50%;
                 
                 .btn {
                     width: 40%;
+
+                    &:first-of-type {
+                        margin-right: 25px;
+                    }
                 }
 
                 @include breakpoint(tablet) {    
@@ -437,7 +443,7 @@ header {
     }
 
     .btn {
-        width: 200px;
+        width: 140px;
     }
 }
 
@@ -470,6 +476,8 @@ header {
 
     .socials {
         display: flex;
-        gap: 20px;
+        justify-content: space-between;
+        width: 90px;
+
     }
 }
