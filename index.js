@@ -91,30 +91,36 @@ $(function () {
 
     //Mobile Hamburger Toggle
 
-    function hideNavMenu () {
-        gsap.to('.nav-dropdown', {duration:.5, clipPath: 'circle(0%)', ease: 'power2'})
-        $('.hamburger').toggleClass('is-active');
-    }
 
+    //Animation
+    menuTL.paused(true);
+    menuTL.to('.nav-dropdown' , {duration:.2, clipPath: 'circle(150% at top right)', ease: 'power2'})
+        .from('.mobile-links li', {duration: .5, x:1000, ease:'power1', stagger:.05}, '-=.5')
 
+    //If hamburger is clicked
     $('.hamburger').click( () => {
         $('.hamburger').toggleClass('is-active');
 
+        //If hamburger has 'active' class
         if($('.hamburger').hasClass('is-active')) {
-            gsap.to('.nav-dropdown' , {duration:.5, clipPath: 'circle(100%)', ease: 'power2'})
-            menuTL.from('.mobile-links li', {duration: .5, x:1000, ease:'power1', stagger:.05})
+            menuTL.play()
 
+            //If logo is clicked while menu is opened
             $('.logo').click( () => {
-                hideNavMenu()    
+                menuTL.reverse();
             })
 
+        //If Hamburger is deactivated
         } else {
-            gsap.to('.nav-dropdown', {duration:.5, clipPath: 'circle(0%)', ease: 'power2'})
+            menuTL.reverse()
         }
     })
 
+
+    //If any mobile link is clicked it will deactivate
     $('.mobile-links').click( () => {
-        hideNavMenu();
+        menuTL.reverse();
+        $('.hamburger').toggleClass('is-active');
     })
 
 

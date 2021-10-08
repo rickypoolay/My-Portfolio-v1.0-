@@ -284,9 +284,9 @@ header .nav-dropdown {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   position: absolute;
   top: 0;
   left: 0;
@@ -295,11 +295,12 @@ header .nav-dropdown {
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   background: rgba(0, 0, 0, 0.1);
-  -webkit-clip-path: circle(0%);
-          clip-path: circle(0%);
+  -webkit-clip-path: circle(0% at top);
+          clip-path: circle(0% at top);
 }
 
 header .mobile-links {
+  margin-top: 100px;
   text-align: right;
 }
 

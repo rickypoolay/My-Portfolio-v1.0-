@@ -273,7 +273,7 @@ header {
     .nav-dropdown {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         position:absolute;
         top:0;
         left:0;
@@ -281,10 +281,11 @@ header {
         height: 100vh;
         backdrop-filter: blur(20px);
         background: rgba(0, 0, 0, 0.1);
-        clip-path:circle(0%);
-    }
+        clip-path:circle(0% at top);
+        }
 
     .mobile-links {
+        margin-top: 100px;
         text-align: right;
 
         .btn {
@@ -295,11 +296,6 @@ header {
             font-size: 15vw;
         }
     }
-
-
-    // .hidden {
-    //     display:none;
-    // }
 
 
     @include breakpoint(tablet) {
