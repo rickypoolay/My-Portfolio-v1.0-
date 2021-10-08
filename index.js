@@ -108,6 +108,7 @@ $(function () {
             //If logo is clicked while menu is opened
             $('.logo').click( () => {
                 menuTL.reverse();
+                $('.hamburger').toggleClass('is-active');
             })
 
         //If Hamburger is deactivated
