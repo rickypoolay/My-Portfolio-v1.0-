@@ -390,8 +390,9 @@ header {
         margin-top: 50px;
 
         .project-info {
-            background: $mainColorDark;
+            background: $iconsActive;
             padding: 20px;
+            text-align: center;
         }
 
         //buttons and stack
@@ -399,7 +400,7 @@ header {
             display: flex;
             justify-content: space-between;
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
 
             @include breakpoint(tablet) {
                 flex-direction: column-reverse;
@@ -413,7 +414,6 @@ header {
 
             .skills-list {
                 justify-content: space-around;
-
             }
 
             .buttons {
@@ -443,6 +443,7 @@ header {
     }
 
     .btn {
+        margin-top:auto;
         width: 140px;
     }
 }

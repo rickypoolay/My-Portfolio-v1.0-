@@ -403,8 +403,9 @@ header .mobile-links li a {
 }
 
 #projects .project .project-info {
-  background: #F85A3E;
+  background: #1E152A;
   padding: 20px;
+  text-align: center;
 }
 
 #projects .project .bottom {
@@ -415,7 +416,7 @@ header .mobile-links li a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 @media (max-width: 50em) {
@@ -467,6 +468,7 @@ header .mobile-links li a {
 }
 
 #projects .btn {
+  margin-top: auto;
   width: 140px;
 }
 
