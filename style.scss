@@ -8,7 +8,7 @@
     }
 
     @else if $point==laptop {
-        @media (min-width: 64em) {
+        @media (max-width: 64em) {
             @content;
         }
     }
@@ -20,13 +20,13 @@
     }
 
     @else if $point==phablet {
-        @media (min-width: 37.5em) {
+        @media (max-width: 37.5em) {
             @content;
         }
     }
 
     @else if $point==mobileonly {
-        @media (max-width: 39em) {
+        @media (max-width: 35em) {
             @content;
         }
     }
@@ -52,7 +52,8 @@ $iconsActive: #1E152A;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    @include breakpoint(mobileonly){
+    
+    @include breakpoint(tablet){
         font-size: 12px;
     }
 }
@@ -88,6 +89,11 @@ p,a,.logo {
     font-weight: bold;
     cursor: pointer;
     color:#fff;
+    z-index: 5;
+}
+
+.hamburger {
+    z-index:5;
 }
 
 h1 {
@@ -154,7 +160,7 @@ a {
         
     }
 
-    @include breakpoint(mobileonly) {
+    @include breakpoint(tablet) {
         &::after {
             display:none;
         }    
@@ -172,7 +178,7 @@ a {
     justify-content: center;
     align-items: center;
 
-    @include breakpoint(mobileonly) {
+    @include breakpoint(tablet) {
         margin-left:0;
     }
 }
@@ -202,7 +208,11 @@ a {
     }
 }
 
-//Header Background w Shadow
+//Dynamic Classes
+
+
+
+//Headings Background w Shadow
 
 .header-bg {
     border-left: 4px solid $mainColorDark;
@@ -237,7 +247,7 @@ header {
     justify-content: space-between;
     top: 0;
     padding: 20px;
-    z-index:1;
+    z-index: 1;
 
     .nav-links {
         height: 100%;
@@ -249,21 +259,50 @@ header {
         transform: rotate(180deg);
         gap:7%;
 
-            .btn {
-                padding: 20px 0;
-                }
-        }
+        .btn {
+            padding: 20px 0;
+            }
+    }
+
+    //Hamburger and Menu
 
     .hamburger {
         display:none;
     }
 
     .nav-dropdown {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position:absolute;
+        top:0;
+        left:0;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.1);
+        clip-path:circle(0%);
+    }
+
+    .mobile-links {
+        text-align: right;
+
+        .btn {
+            padding:0 50px;
+        }
+
+        li a{
+            font-size: 15vw;
+        }
     }
 
 
-    @include breakpoint(mobileonly) {
+    // .hidden {
+    //     display:none;
+    // }
+
+
+    @include breakpoint(tablet) {
         flex-direction: row;
         align-items: start;
         height:auto;
@@ -277,11 +316,6 @@ header {
             display:unset;
         }
     }
-
-    .nav-dropdown {
-        position: absolute;
-    }
-    
 }
 
 //      Landing Page Section
@@ -347,49 +381,38 @@ header {
     // Individual Projects
 
     .projects-container {
-        display: flex;
-        flex-direction: column;
-        gap:25px;
         margin-block: 25px;
+        max-width: 900px;
     }
 
     .project {
-        display: flex;
-
-        @include breakpoint(tablet) {
-            flex-direction: column;
-        }
+        margin-top: 50px;
 
         .project-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             background: $mainColorDark;
             padding: 20px;
-            width: 80%;
-
-            p {
-                font-size: 15px;
-            }
         }
 
-        .text {
-            max-width:500px;
-        }
-
-
+        //buttons and stack
         .bottom {
             display: flex;
-            text-align: right;
             justify-content: space-between;
+            text-align: right;
+            margin-top: 20px;
 
-            p{
-                margin-bottom: 0;
+            @include breakpoint(tablet) {
+                flex-direction: column-reverse;
+            }
+
+            .skills-list {
+                gap: 10px;
+                justify-content: flex-end;
+
             }
 
             .icon-wrapper {
-                max-height: 35px;
-                max-width: 35px;
+                max-height:2.5rem;
+                max-width: 2.5rem;
                 filter: grayscale(100%) invert(100%);
             }
 
@@ -397,23 +420,28 @@ header {
                 display: flex;
                 gap:25px;
                 margin-top: auto;
+                margin-right: 10px;
                 width: 50%;
+                min-width: 150px;
                 
                 .btn {
                     width: 40%;
-                    font-size: 1rem;
                 }
-            }
 
-            @include breakpoint(tablet) {
-                flex-direction: column;
+                @include breakpoint(tablet) {    
+                        width: 100%;
+                        margin-top: 20px;
+
+                        .btn{
+                            width: 100%;
+                        }
+                }    
             }
         }
+    }
 
-        .img-wrapper {
-            // max-width: 400px;
-            // max-height: 350px;
-        }
+    .btn {
+        width: 200px;
     }
 }
 

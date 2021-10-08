@@ -8,6 +8,7 @@ $(function () {
     function scrollChangeNavText (navLink) {
         $('.nav-links li a').each(() => {
             $('.nav-links li a').css('color', '');
+            $('.mobile-links li a').css('color', '');
             $('.logo').css('color', '');
         })
         $(navLink).css('color', '#1E152A');
@@ -18,7 +19,7 @@ $(function () {
     var aboutTL = gsap.timeline({scrollTrigger: {trigger:'#about', start: "top center", end: "center center"}});
     var projectsTL = gsap.timeline({scrollTrigger: {trigger:'#projects', start: "top center", end: "center center"}});
     var contactTL = gsap.timeline({scrollTrigger: {trigger:'#contact', start: "top center", end: "center center"}});
-    var modalTL = gsap.timeline();
+    var menuTL = gsap.timeline();
 
     //Animate Pages adding to Timelines //
         //Home
@@ -50,7 +51,7 @@ $(function () {
     
         //Scroll by clicking nav-link to section
 
-    $('.nav-links li').click((e) => {
+    $('.nav-links li, .mobile-links li').click((e) => {
         const clicked = e.target.innerText.toLowerCase();
         if (clicked == 'resume') {
             return;
@@ -80,16 +81,41 @@ $(function () {
             start:"top center",
             end:"bottom center",
             onEnter: () => { scrollChangeNavText(`.nav-${sectionID}`) },
-            onEnterBack: () => { scrollChangeNavText(`.nav-${sectionID}`) },
+            onEnterBack: () => {
+            scrollChangeNavText(`.nav-${sectionID}`)
+            scrollChangeNavText(`.mobile-links .nav-${sectionID}`)
+            },
         })
     });
 
 
-    //Popup Modal
+    //Mobile Hamburger Toggle
+
+    function hideNavMenu () {
+        gsap.to('.nav-dropdown', {duration:.5, clipPath: 'circle(0%)', ease: 'power2'})
+        $('.hamburger').toggleClass('is-active');
+    }
 
 
+    $('.hamburger').click( () => {
+        $('.hamburger').toggleClass('is-active');
 
+        if($('.hamburger').hasClass('is-active')) {
+            gsap.to('.nav-dropdown' , {duration:.5, clipPath: 'circle(100%)', ease: 'power2'})
+            menuTL.from('.mobile-links li', {duration: .5, x:1000, ease:'power1', stagger:.05})
 
+            $('.logo').click( () => {
+                hideNavMenu()    
+            })
+
+        } else {
+            gsap.to('.nav-dropdown', {duration:.5, clipPath: 'circle(0%)', ease: 'power2'})
+        }
+    })
+
+    $('.mobile-links').click( () => {
+        hideNavMenu();
+    })
 
 
 
