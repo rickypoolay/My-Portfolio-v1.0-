@@ -1,7 +1,5 @@
 $(function () {
 
-    console.log(window.x);
-
     //Installing Gsap Plugins //
     gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
@@ -82,12 +80,13 @@ $(function () {
             trigger: `#${sectionID}`,
             start:"top center",
             end:"bottom center",
-            onEnter: () => { scrollChangeNavText(`.nav-${sectionID}`) },
-            onEnterBack: () => {
+            onEnter: () => { 
             scrollChangeNavText(`.nav-${sectionID}`)
-            scrollChangeNavText(`.mobile-links .nav-${sectionID}`)
             },
-            // markers: true,
+            onEnterBack: () => {
+            scrollChangeNavText(`.nav-${sectionID}`);
+            },
+            markers: true,
         })
     });
 
