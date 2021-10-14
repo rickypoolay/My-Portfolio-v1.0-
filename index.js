@@ -86,7 +86,7 @@ $(function () {
             onEnterBack: () => {
             scrollChangeNavText(`.nav-${sectionID}`);
             },
-            markers: true,
+            // markers: true,
         })
     });
 
