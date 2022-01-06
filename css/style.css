@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
-*, body, ::before, ::after {
+*,
+body,
+::before,
+::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -7,12 +10,16 @@
 }
 
 @media (max-width: 50em) {
-  *, body, ::before, ::after {
+  *,
+  body,
+  ::before,
+  ::after {
     font-size: 12px;
   }
 }
 
-section, footer {
+section,
+footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,7 +28,8 @@ section, footer {
           justify-content: center;
 }
 
-li, a {
+li,
+a {
   list-style: none;
   text-decoration: none;
 }
@@ -33,13 +41,18 @@ img {
      object-fit: fill;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: Poppins;
   color: #fff;
   text-transform: uppercase;
 }
 
-p, a, .logo {
+p,
+a,
+.logo {
   font-family: Urbanist;
 }
 
@@ -70,7 +83,8 @@ h3 {
   font-weight: 200;
 }
 
-p, a {
+p,
+a {
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.75);
   font-weight: 200;
@@ -95,7 +109,7 @@ a {
 }
 
 .btn:hover {
-  color: #1E152A;
+  color: #1f152a;
 }
 
 .btn:hover::after {
@@ -104,7 +118,7 @@ a {
 }
 
 .btn::after {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.75);
@@ -120,12 +134,6 @@ a {
   z-index: -1;
   top: 0;
   left: 0;
-}
-
-@media (max-width: 50em) {
-  .btn::after {
-    display: none;
-  }
 }
 
 .container {
@@ -197,7 +205,7 @@ a {
 }
 
 .header-bg {
-  border-left: 4px solid #F85A3E;
+  border-left: 4px solid #00223d;
   -webkit-box-shadow: -35px 3px 49px -24px rgba(0, 0, 0, 0.205);
           box-shadow: -35px 3px 49px -24px rgba(0, 0, 0, 0.205);
   padding: 10px 25px;
@@ -216,7 +224,7 @@ a {
 }
 
 .right {
-  border-right: 4px solid #FFB74B;
+  border-right: 4px solid #9897ce;
   border-left: none;
   -webkit-box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
           box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
@@ -337,8 +345,8 @@ header .mobile-links li a {
 }
 
 #hero {
-  background: -webkit-gradient(linear, left top, right bottom, from(#FFB74B), to(#F85A3E));
-  background: linear-gradient(to bottom right, #FFB74B, #F85A3E);
+  background: -webkit-gradient(linear, left top, right bottom, from(#9897ce), to(#00223d));
+  background: linear-gradient(to bottom right, #9897ce, #00223d);
 }
 
 #hero .header-bg {
@@ -354,13 +362,13 @@ header .mobile-links li a {
 }
 
 #hero h2 {
-  font-family: 'Urbanist';
-  text-transform: lowercase;
+  font-family: "Urbanist";
+  text-transform: capitalize;
 }
 
 #about {
-  background: -webkit-gradient(linear, left bottom, right top, from(#FFB74B), to(#F85A3E));
-  background: linear-gradient(to top right, #FFB74B, #F85A3E);
+  background: -webkit-gradient(linear, left bottom, right top, from(#9897ce), to(#00223d));
+  background: linear-gradient(to top right, #9897ce, #00223d);
 }
 
 #about .content-about {
@@ -380,8 +388,8 @@ header .mobile-links li a {
 }
 
 #projects {
-  background: -webkit-gradient(linear, left top, right bottom, from(#FFB74B), to(#F85A3E));
-  background: linear-gradient(to bottom right, #FFB74B, #F85A3E);
+  background: -webkit-gradient(linear, left top, right bottom, from(#9897ce), to(#00223d));
+  background: linear-gradient(to bottom right, #9897ce, #00223d);
 }
 
 #projects .header-bg {
@@ -403,7 +411,7 @@ header .mobile-links li a {
 }
 
 #projects .project .project-info {
-  background: #1E152A;
+  background: #1f152a;
   padding: 20px;
   text-align: center;
 }
@@ -473,8 +481,8 @@ header .mobile-links li a {
 }
 
 #contact {
-  background: -webkit-gradient(linear, left bottom, right top, from(#FFB74B), to(#F85A3E));
-  background: linear-gradient(to top right, #FFB74B, #F85A3E);
+  background: -webkit-gradient(linear, left bottom, right top, from(#9897ce), to(#00223d));
+  background: linear-gradient(to top right, #9897ce, #00223d);
 }
 
 #contact .text-wrapper {

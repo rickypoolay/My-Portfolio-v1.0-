@@ -1,484 +1,476 @@
 //      breakpoints
 
 @mixin breakpoint($point) {
-    @if $point==desktop {
-        @media (min-width: 70em) {
-            @content;
-        }
+  @if $point==desktop {
+    @media (min-width: 70em) {
+      @content;
     }
-
-    @else if $point==laptop {
-        @media (max-width: 64em) {
-            @content;
-        }
+  } @else if $point==laptop {
+    @media (max-width: 64em) {
+      @content;
     }
-
-    @else if $point==tablet {
-        @media (max-width: 50em) {
-            @content;
-        }
+  } @else if $point==tablet {
+    @media (max-width: 50em) {
+      @content;
     }
-
-    @else if $point==phablet {
-        @media (max-width: 37.5em) {
-            @content;
-        }
+  } @else if $point==phablet {
+    @media (max-width: 37.5em) {
+      @content;
     }
-
-    @else if $point==mobileonly {
-        @media (max-width: 35em) {
-            @content;
-        }
+  } @else if $point==mobileonly {
+    @media (max-width: 35em) {
+      @content;
     }
+  }
 }
-
-
 
 //      Fonts
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
 
 //      Color Variables
 
-$headings : #fff;
-$paragraph : hsla(0, 0%, 100%, 0.75);
-$mainColorLight : #FFB74B;
-$mainColorDark : #F85A3E;
-$iconsActive: #1E152A;
+$headings: #fff;
+$paragraph: hsla(0, 0%, 100%, 0.75);
+$mainColorLight: #9897ce;
+$mainColorDark: #00223d;
+$iconsActive: #1f152a;
 
 //      Global Styles
 
-*, body, ::before,::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    
-    @include breakpoint(tablet){
-        font-size: 12px;
-    }
+*,
+body,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint(tablet) {
+    font-size: 12px;
+  }
 }
 
-section,footer {
-    display: flex;
-    justify-content: center;
+section,
+footer {
+  display: flex;
+  justify-content: center;
 }
 
-li,a {
-    list-style: none;
-    text-decoration: none;
+li,
+a {
+  list-style: none;
+  text-decoration: none;
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
 }
 
-h1,h2,h3,h4 {
-    font-family: Poppins;
-    color: $headings;
-    text-transform: uppercase;
+h1,
+h2,
+h3,
+h4 {
+  font-family: Poppins;
+  color: $headings;
+  text-transform: uppercase;
 }
 
-p,a,.logo {
-    font-family: Urbanist;
+p,
+a,
+.logo {
+  font-family: Urbanist;
 }
 
 .logo {
-    font-size: 4rem;
-    font-weight: bold;
-    cursor: pointer;
-    color:#fff;
-    z-index: 5;
+  font-size: 4rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  z-index: 5;
 }
 
 .hamburger {
-    z-index:5;
+  z-index: 5;
 }
 
 h1 {
-    font-size: 6rem;
-    font-weight: 200;
+  font-size: 6rem;
+  font-weight: 200;
 }
 
 h2 {
-    font-size: 3rem;
-    font-weight: 200;
+  font-size: 3rem;
+  font-weight: 200;
 }
 
 h3 {
-    font-size: 2rem;
-    font-weight: 200;
+  font-size: 2rem;
+  font-weight: 200;
 }
 
-p,a {
-    font-size: 1.5rem;
-    color:$paragraph;
-    font-weight: 200;
+p,
+a {
+  font-size: 1.5rem;
+  color: $paragraph;
+  font-weight: 200;
 }
 
 a {
-    cursor: pointer;
-    display: inline-block;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .btn {
-    outline: $headings solid 1px;
-    text-transform: uppercase;
-    font-family: Poppins;
-    padding:5px 0;
-    text-align: center;
-    position: relative;
-    transition: color 300ms ease-in-out;
-    z-index: 0;
-    display:inline-block;
+  outline: $headings solid 1px;
+  text-transform: uppercase;
+  font-family: Poppins;
+  padding: 5px 0;
+  text-align: center;
+  position: relative;
+  transition: color 300ms ease-in-out;
+  z-index: 0;
+  display: inline-block;
 
-    //Background Hover Effect
+  //Background Hover Effect
 
-    &:hover {
-        color: $iconsActive;
+  &:hover {
+    color: $iconsActive;
 
-        &::after {
-            transform: scalex(100%);
-        }
-
-    }
-    
     &::after {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background: $paragraph;
-        position: absolute;
-        inset: 0;
-        margin-block: 0;
-        transition: transform 200ms ease-in-out;
-        transform: scaleX(0%);
-        z-index: -1;
-        top:0;
-        left:0;
-        
+      transform: scalex(100%);
     }
+  }
 
-    @include breakpoint(tablet) {
-        &::after {
-            display:none;
-        }    
-    }
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: $paragraph;
+    position: absolute;
+    inset: 0;
+    margin-block: 0;
+    transition: transform 200ms ease-in-out;
+    transform: scaleX(0%);
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+
+  //   @include breakpoint(tablet) {
+  //     &::after {
+  //       display: none;
+  //     }
+  //   }
 }
 
 .container {
-    margin:0 auto;
-    width: 100%;
-    min-height: 100vh;
-    margin-left: 150px;
-    margin-bottom: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  margin-left: 150px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    @include breakpoint(tablet) {
-        margin-left:0;
-    }
+  @include breakpoint(tablet) {
+    margin-left: 0;
+  }
 }
 
 .text-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width:80%;
-    max-width: 1120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 1120px;
 }
 
 .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
-    li {
-        margin-top: 15px;
-        margin-right: 20px;
-    }
+  li {
+    margin-top: 15px;
+    margin-right: 20px;
+  }
 
+  p {
+    text-align: center;
+  }
 
-    p {
-        text-align: center;
-    }
-
-    .icon-wrapper {
-        margin:auto;
-        max-width: 48px;
-        height: 48px;
-    }
+  .icon-wrapper {
+    margin: auto;
+    max-width: 48px;
+    height: 48px;
+  }
 }
 
 //Dynamic Classes
 
-
-
 //Headings Background w Shadow
 
 .header-bg {
-    border-left: 4px solid $mainColorDark;
-    box-shadow: -35px 3px 49px -24px  rgba(0, 0, 0, 0.205);
-    padding:10px 25px;
-    min-height: 275px;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    margin-right: auto;
+  border-left: 4px solid $mainColorDark;
+  box-shadow: -35px 3px 49px -24px rgba(0, 0, 0, 0.205);
+  padding: 10px 25px;
+  min-height: 275px;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin-right: auto;
 }
 
 .right {
-    border-right: 4px solid $mainColorLight;
-    border-left:none;
-    box-shadow: 28px 3px 49px -24px  rgba(0, 0, 0, 0.205);
-    text-align: right;
-    align-items: flex-end;;
-    margin-left:auto;
-    margin-right:0;
+  border-right: 4px solid $mainColorLight;
+  border-left: none;
+  box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
+  text-align: right;
+  align-items: flex-end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 //      NavBar
 
 header {
-    position:fixed;
+  position: fixed;
+  height: 100%;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  padding: 20px;
+  z-index: 1;
+
+  .nav-links {
     height: 100%;
-    width: 150px;
     display: flex;
-    flex-direction: column;
+    writing-mode: vertical-lr;
+    flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    transform: rotate(180deg);
+    gap: 7%;
+
+    .btn {
+      padding: 20px 0;
+    }
+  }
+
+  //Hamburger and Menu
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: absolute;
     top: 0;
-    padding: 20px;
-    z-index: 1;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.1);
+    clip-path: circle(0% at top);
+  }
+
+  .mobile-links {
+    margin-top: 100px;
+    text-align: right;
+
+    .btn {
+      padding: 0 50px;
+    }
+
+    li a {
+      font-size: 15vw;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    flex-direction: row;
+    align-items: start;
+    height: auto;
+    width: 100%;
 
     .nav-links {
-        height: 100%;
-        display: flex;
-        writing-mode: vertical-lr;
-        flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
-        transform: rotate(180deg);
-        gap:7%;
-
-        .btn {
-            padding: 20px 0;
-            }
+      display: none;
     }
-
-    //Hamburger and Menu
 
     .hamburger {
-        display:none;
+      display: unset;
     }
-
-    .nav-dropdown {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        position:absolute;
-        top:0;
-        left:0;
-        width: 100vw;
-        height: 100vh;
-        backdrop-filter: blur(20px);
-        background: rgba(0, 0, 0, 0.1);
-        clip-path:circle(0% at top);
-        }
-
-    .mobile-links {
-        margin-top: 100px;
-        text-align: right;
-
-        .btn {
-            padding:0 50px;
-        }
-
-        li a{
-            font-size: 15vw;
-        }
-    }
-
-
-    @include breakpoint(tablet) {
-        flex-direction: row;
-        align-items: start;
-        height:auto;
-        width: 100%;
-
-        .nav-links{
-            display:none;
-        }
-
-        .hamburger {
-            display:unset;
-        }
-    }
+  }
 }
 
 //      Landing Page Section
 
 #hero {
-    background: linear-gradient(to bottom right,$mainColorLight, $mainColorDark);
-    
-    .header-bg {
-        max-width: 800px;
-        justify-content: center;
+  background: linear-gradient(to bottom right, $mainColorLight, $mainColorDark);
 
-        span {
-            font-size: 6rem;
-            font-weight: 700;
-        }
-    }
+  .header-bg {
+    max-width: 800px;
+    justify-content: center;
 
-    h2 {
-        font-family: 'Urbanist';
-        text-transform: lowercase;
+    span {
+      font-size: 6rem;
+      font-weight: 700;
     }
+  }
+
+  h2 {
+    font-family: "Urbanist";
+    text-transform: capitalize;
+  }
 }
 
 //About Section
 
 #about {
-    background: linear-gradient(to top right,$mainColorLight, $mainColorDark);
+  background: linear-gradient(to top right, $mainColorLight, $mainColorDark);
 
-    .content-about {
-        max-width: 700px;
+  .content-about {
+    max-width: 700px;
+  }
+
+  .content-skills {
+    max-width: 900px;
+  }
+
+  .skills-list {
+    margin-top: 25px;
+
+    .icon-wrapper {
+      margin-top: 10px;
     }
-
-    .content-skills {
-        max-width: 900px;
-    }
-
-    .skills-list {
-        margin-top:25px;
-
-        .icon-wrapper {
-            margin-top: 10px;
-        }
-    }
-
+  }
 }
 
 //Projects Section
 
 #projects {
-    background: linear-gradient(to bottom right, $mainColorLight, $mainColorDark);
+  background: linear-gradient(to bottom right, $mainColorLight, $mainColorDark);
 
-    // Header
+  // Header
 
-    .header-bg {
-        min-height: 155px;
-        max-width: 500px;
+  .header-bg {
+    min-height: 155px;
+    max-width: 500px;
 
-        h2 {
-            margin:auto 0;
+    h2 {
+      margin: auto 0;
+    }
+  }
+
+  // Individual Projects
+
+  .projects-container {
+    margin-block: 25px;
+    max-width: 800px;
+  }
+
+  .project {
+    margin-top: 50px;
+
+    .project-info {
+      background: $iconsActive;
+      padding: 20px;
+      text-align: center;
+    }
+
+    //buttons and stack
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      margin-top: 30px;
+
+      @include breakpoint(tablet) {
+        flex-direction: column-reverse;
+      }
+
+      .icon-wrapper {
+        max-height: 2.5rem;
+        max-width: 2.5rem;
+        filter: grayscale(100%) invert(100%);
+      }
+
+      .skills-list {
+        justify-content: space-around;
+      }
+
+      .buttons {
+        display: flex;
+        margin-top: auto;
+        margin-right: 10px;
+        min-width: 50%;
+
+        .btn {
+          width: 40%;
+
+          &:first-of-type {
+            margin-right: 25px;
+          }
         }
-    }
 
-    // Individual Projects
+        @include breakpoint(tablet) {
+          width: 100%;
+          margin-top: 20px;
 
-    .projects-container {
-        margin-block: 25px;
-        max-width: 800px;
-    }
-
-    .project {
-        margin-top: 50px;
-
-        .project-info {
-            background: $iconsActive;
-            padding: 20px;
-            text-align: center;
+          .btn {
+            width: 100%;
+          }
         }
-
-        //buttons and stack
-        .bottom {
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            margin-top: 30px;
-
-            @include breakpoint(tablet) {
-                flex-direction: column-reverse;
-            }
-
-            .icon-wrapper {
-                max-height:2.5rem;
-                max-width: 2.5rem;
-                filter: grayscale(100%) invert(100%);
-            }
-
-            .skills-list {
-                justify-content: space-around;
-            }
-
-            .buttons {
-                display: flex;
-                margin-top: auto;
-                margin-right: 10px;
-                min-width: 50%;
-                
-                .btn {
-                    width: 40%;
-
-                    &:first-of-type {
-                        margin-right: 25px;
-                    }
-                }
-
-                @include breakpoint(tablet) {    
-                        width: 100%;
-                        margin-top: 20px;
-
-                        .btn{
-                            width: 100%;
-                        }
-                }    
-            }
-        }
+      }
     }
+  }
 
-    .btn {
-        margin-top:auto;
-        width: 140px;
-    }
+  .btn {
+    margin-top: auto;
+    width: 140px;
+  }
 }
-
 
 //Contact Section
 
 #contact {
-    background: linear-gradient(to top right, $mainColorLight, $mainColorDark);
+  background: linear-gradient(to top right, $mainColorLight, $mainColorDark);
 
-    .text-wrapper {
-        max-width: 550px;
-        text-align: center;
-    }
+  .text-wrapper {
+    max-width: 550px;
+    text-align: center;
+  }
 
-    .img-wrapper {
-        max-width: 85px;
-        margin-bottom: 50px;
-    }
+  .img-wrapper {
+    max-width: 85px;
+    margin-bottom: 50px;
+  }
 
-    .icon-wrapper {
-        max-width: 50px;
-        min-height: 50px;
-    }
+  .icon-wrapper {
+    max-width: 50px;
+    min-height: 50px;
+  }
 
-    .btn {
-        margin:50px;
-        width: 225px;
-        font-size: 2.25rem;
-    }
+  .btn {
+    margin: 50px;
+    width: 225px;
+    font-size: 2.25rem;
+  }
 
-    .socials {
-        display: flex;
-        justify-content: space-between;
-        width: 90px;
-
-    }
+  .socials {
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+  }
 }
