@@ -219,5 +219,5 @@ $(function () {
   $(".mobile-links").click(() => {
     menuTL.reverse();
     $(".hamburger").toggleClass("is-active");
-  });
+  }); 
 });
