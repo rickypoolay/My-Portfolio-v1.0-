@@ -109,7 +109,7 @@ a {
 }
 
 .btn:hover {
-  color: #1f152a;
+  color: #000000;
 }
 
 .btn:hover::after {
@@ -121,7 +121,7 @@ a {
   content: "";
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.75);
+  background: #fff;
   position: absolute;
   inset: 0;
   margin-block: 0;
@@ -134,6 +134,15 @@ a {
   z-index: -1;
   top: 0;
   left: 0;
+}
+
+@media (max-width: 50em) {
+  .btn::after {
+    display: none;
+  }
+  .btn:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
 }
 
 .container {
@@ -224,7 +233,7 @@ a {
 }
 
 .right {
-  border-right: 4px solid #9897ce;
+  border-right: 4px solid #5af;
   border-left: none;
   -webkit-box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
           box-shadow: 28px 3px 49px -24px rgba(0, 0, 0, 0.205);
@@ -306,7 +315,7 @@ header .nav-dropdown {
   height: 100vh;
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.342);
   -webkit-clip-path: circle(0% at top);
           clip-path: circle(0% at top);
 }
@@ -320,8 +329,16 @@ header .mobile-links .btn {
   padding: 0 50px;
 }
 
+header .mobile-links .nav-resume {
+  outline: none;
+  padding: 5px 20px;
+  background: #000000;
+  color: #fff;
+}
+
 header .mobile-links li a {
   font-size: 15vw;
+  color: #fff;
 }
 
 @media (max-width: 50em) {
@@ -345,8 +362,8 @@ header .mobile-links li a {
 }
 
 #hero {
-  background: -webkit-gradient(linear, left top, right bottom, from(#9897ce), to(#00223d));
-  background: linear-gradient(to bottom right, #9897ce, #00223d);
+  background: -webkit-gradient(linear, left top, right bottom, from(#5af), to(#00223d));
+  background: linear-gradient(to bottom right, #5af, #00223d);
 }
 
 #hero .header-bg {
@@ -367,8 +384,8 @@ header .mobile-links li a {
 }
 
 #about {
-  background: -webkit-gradient(linear, left bottom, right top, from(#9897ce), to(#00223d));
-  background: linear-gradient(to top right, #9897ce, #00223d);
+  background: -webkit-gradient(linear, left bottom, right top, from(#5af), to(#00223d));
+  background: linear-gradient(to top right, #5af, #00223d);
 }
 
 #about .content-about {
@@ -388,8 +405,8 @@ header .mobile-links li a {
 }
 
 #projects {
-  background: -webkit-gradient(linear, left top, right bottom, from(#9897ce), to(#00223d));
-  background: linear-gradient(to bottom right, #9897ce, #00223d);
+  background: -webkit-gradient(linear, left top, right bottom, from(#5af), to(#00223d));
+  background: linear-gradient(to bottom right, #5af, #00223d);
 }
 
 #projects .header-bg {
@@ -411,7 +428,7 @@ header .mobile-links li a {
 }
 
 #projects .project .project-info {
-  background: #1f152a;
+  background: #000000;
   padding: 20px;
   text-align: center;
 }
@@ -481,8 +498,8 @@ header .mobile-links li a {
 }
 
 #contact {
-  background: -webkit-gradient(linear, left bottom, right top, from(#9897ce), to(#00223d));
-  background: linear-gradient(to top right, #9897ce, #00223d);
+  background: -webkit-gradient(linear, left bottom, right top, from(#5af), to(#00223d));
+  background: linear-gradient(to top right, #5af, #00223d);
 }
 
 #contact .text-wrapper {

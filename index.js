@@ -5,7 +5,7 @@ $(function () {
 
   if (top <= 100) {
     () => {
-      $(".logo").css("color", "#1E152A");
+      $(".logo").css("color", "#000");
     };
   }
 
@@ -20,7 +20,7 @@ $(function () {
       $(".mobile-links li a").css("color", "");
       $(".logo").css("color", "");
     });
-    $(navLink).css("color", "#1E152A");
+    $(navLink).css("color", "#000");
   }
 
   //Creating TimeLines for each Section //
@@ -75,7 +75,7 @@ $(function () {
       duration: 0.5,
       transformOrigin: "top center",
       boxShadow: "none",
-      backgroundColor: "#1E152A",
+      backgroundColor: "#000",
       scaleY: 0,
       ease: "power1",
       stagger: 0.25,
@@ -93,7 +93,7 @@ $(function () {
       scaleX: 0,
       opacity: 0,
       transformOrigin: "center center",
-      backgroundColor: "#1E152A",
+      backgroundColor: "#000",
     })
     .from(
       ".project",
@@ -101,7 +101,7 @@ $(function () {
         duration: 0.5,
         scaleX: 0,
         scaleY: 0,
-        backgroundColor: "#1E152A",
+        backgroundColor: "#000",
         stagger: 0.1,
         ease: "back",
         opacity: 0,
@@ -219,5 +219,5 @@ $(function () {
   $(".mobile-links").click(() => {
     menuTL.reverse();
     $(".hamburger").toggleClass("is-active");
-  }); 
+  });
 });

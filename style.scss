@@ -32,9 +32,9 @@
 
 $headings: #fff;
 $paragraph: hsla(0, 0%, 100%, 0.75);
-$mainColorLight: #9897ce;
+$mainColorLight: #5af;
 $mainColorDark: #00223d;
-$iconsActive: #1f152a;
+$iconsActive: #000000;
 
 //      Global Styles
 
@@ -148,7 +148,7 @@ a {
     content: "";
     width: 100%;
     height: 100%;
-    background: $paragraph;
+    background: $headings;
     position: absolute;
     inset: 0;
     margin-block: 0;
@@ -159,11 +159,15 @@ a {
     left: 0;
   }
 
-  //   @include breakpoint(tablet) {
-  //     &::after {
-  //       display: none;
-  //     }
-  //   }
+  @include breakpoint(tablet) {
+    &::after {
+      display: none;
+    }
+
+    &:hover {
+      color: $paragraph;
+    }
+  }
 }
 
 .container {
@@ -281,7 +285,7 @@ header {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(20px);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.342);
     clip-path: circle(0% at top);
   }
 
@@ -293,8 +297,19 @@ header {
       padding: 0 50px;
     }
 
+    .nav-resume {
+      outline: none;
+      padding: 5px 20px;
+      background: $iconsActive;
+      color: $headings;
+    }
+
     li a {
       font-size: 15vw;
+      color: $headings;
+
+      @include breakpoint(tablet) {
+      }
     }
   }
 
