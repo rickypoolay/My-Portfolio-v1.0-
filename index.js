@@ -111,18 +111,25 @@ $(function () {
     .from("#projects .btn", { duration: 0.5, opacity: 0, ease: "back" });
 
   //Contact
-  contactTL
-    .from("#contact .text-wrapper", {
-      duration: 0.75,
-      opacity: 0,
-      y: 200,
-      ease: "power1",
-    })
-    .fromTo(
-      "#contact .btn",
-      { scaleX: 0, scaleY: 0 },
-      { duration: 0.5, scaleX: 1, scaleY: 1, ease: "back" }
-    );
+  contactTL.from("#contact .text-wrapper", {
+    duration: 0.75,
+    opacity: 0,
+    y: 200,
+    ease: "power1",
+  });
+
+  //On click submit form.
+  $("#form-submit").click(() => {
+    if (
+      $("#fullName")[0].value &&
+      $("#email")[0].value &&
+      $("#message")[0].value
+    ) {
+      $(".contact-form").submit();
+    } else {
+      alert("Fill all inputs");
+    }
+  });
 
   //Auto Scroll from navbar //
 

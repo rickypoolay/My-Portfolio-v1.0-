@@ -584,11 +584,6 @@ header .mobile-links li a {
   height: 2.5em;
 }
 
-#contact .form-submit {
-  background: none;
-  border: none;
-}
-
 #contact .socials {
   display: -webkit-box;
   display: -ms-flexbox;
