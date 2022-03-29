@@ -72,7 +72,8 @@ img {
 h1,
 h2,
 h3,
-h4 {
+h4,
+form {
   font-family: Poppins;
   color: $headings;
   text-transform: uppercase;
@@ -80,7 +81,9 @@ h4 {
 
 p,
 a,
-.logo {
+.logo,
+input,
+textarea {
   font-family: Urbanist;
 }
 
@@ -478,9 +481,50 @@ header {
   }
 
   .btn {
-    margin: 50px;
-    width: 225px;
-    font-size: 2.25rem;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .contact-form {
+    width: 100%;
+    margin: 50px 0;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    width: 100%;
+    margin-bottom: 1em;
+    ::placeholder {
+      color: #ffffff77;
+    }
+
+    & ::selection {
+      outline: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    input,
+    textarea {
+      color: white;
+      padding: 0.5rem;
+      background: transparent;
+      border: white 1px solid;
+    }
+
+    input {
+      height: 2.5em;
+    }
+  }
+
+  .form-submit {
+    background: none;
+    border: none;
   }
 
   .socials {
