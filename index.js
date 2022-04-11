@@ -31,6 +31,7 @@ $(function () {
       end: "center center",
     },
   });
+
   var projectsTL = gsap.timeline({
     scrollTrigger: {
       trigger: "#projects",
@@ -38,6 +39,7 @@ $(function () {
       end: "center center",
     },
   });
+
   var contactTL = gsap.timeline({
     scrollTrigger: {
       trigger: "#contact",
@@ -45,9 +47,11 @@ $(function () {
       end: "center center",
     },
   });
+
   var menuTL = gsap.timeline();
 
   //Animate Pages adding to Timelines //
+
   //Home
   homeTL
     .from(".logo", { duration: 0.5, opacity: 0, delay: 0.25 })
@@ -126,7 +130,7 @@ $(function () {
     ) {
       $(".contact-form").submit();
     } else {
-      alert("Fill all inputs");
+      alert("Fill all inputs.");
     }
   });
 
@@ -213,6 +217,7 @@ $(function () {
         if ($(".hamburger").hasClass("is-active")) {
           menuTL.reverse();
           $(".hamburger").toggleClass("is-active");
+          $("body").removeClass("fixed-position");
         }
       });
 
@@ -227,5 +232,6 @@ $(function () {
   $(".mobile-links").click(() => {
     menuTL.reverse();
     $(".hamburger").toggleClass("is-active");
+    $("body").removeClass("fixed-position");
   });
 });
