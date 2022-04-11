@@ -45,7 +45,6 @@ body,
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
   @include breakpoint(tablet) {
     font-size: 12px;
   }
@@ -183,9 +182,14 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
 
   @include breakpoint(tablet) {
     margin-left: 0;
+  }
+
+  @include breakpoint(desktop) {
+    min-height: 70vh;
   }
 }
 
@@ -220,6 +224,10 @@ a {
 
 //Dynamic Classes
 
+.fixed-position {
+  overflow-y: hidden;
+}
+
 //Headings Background w Shadow
 
 .header-bg {
@@ -246,7 +254,6 @@ a {
 //      NavBar
 header {
   position: fixed;
-  height: 100%;
   width: 150px;
   display: flex;
   flex-direction: column;
@@ -275,6 +282,9 @@ header {
 
   .hamburger {
     display: none;
+    padding: 5px;
+    margin: auto 0;
+    scale: 0.5;
   }
 
   .nav-dropdown {
@@ -320,6 +330,7 @@ header {
     align-items: start;
     height: auto;
     width: 100%;
+    padding: 2px;
 
     .nav-links {
       display: none;
@@ -334,6 +345,7 @@ header {
 //      Landing Page Section
 
 #hero {
+  padding-top: 100px;
   background: linear-gradient(to bottom right, $mainColorLight, $mainColorDark);
 
   .header-bg {

@@ -1,7 +1,6 @@
 $(function () {
   const doc = document.documentElement;
   const top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-  console.log(top);
 
   if (top <= 100) {
     () => {
@@ -206,6 +205,7 @@ $(function () {
 
     //If hamburger has 'active' class
     if ($(".hamburger").hasClass("is-active")) {
+      $("body").addClass("fixed-position");
       menuTL.play();
 
       //If logo is clicked while menu is opened
@@ -219,6 +219,7 @@ $(function () {
       //If Hamburger is deactivated
     } else {
       menuTL.reverse();
+      $("body").removeClass("fixed-position");
     }
   });
 
